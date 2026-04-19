@@ -2,7 +2,8 @@ baseURL: "https://sard0x72.github.io/blog/"   # ← change this to your domain
 languageCode: en-us
 title: "Your Name"                  # ← change this
 theme: PaperMod
-paginate: 10
+pagination:
+  pagerSize: 10
 
 enableRobotsTXT: true
 buildDrafts: false
