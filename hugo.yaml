@@ -1,6 +1,6 @@
-baseURL: "https://sard0x72.github.io/blog/"   # ← change this to your domain
+baseURL: "https://again.uz/"   # ← change this to your domain
 languageCode: en-us
-title: "Your Name"                  # ← change this
+title: "Sardor"                  # ← change this
 theme: PaperMod
 pagination:
   pagerSize: 10
@@ -16,9 +16,9 @@ minify:
 
 params:
   env: production
-  title: "Your Name"                # ← change this
+  title: "sardor"                # ← change this
   description: "Writeups and blog posts"
-  author: "Your Name"               # ← change this
+  author: "sardor"               # ← change this
 
   defaultTheme: auto                # auto = follows system, or: light / dark
   disableThemeToggle: false
@@ -44,16 +44,16 @@ params:
     favicon: "/favicon.ico"
 
   homeInfoParams:
-    Title: "Hi, I'm Your Name 👋"   # ← change this
+    Title: "Hi, I'm Sardor Nuriddinov 👋"   # ← change this
     Content: >
       Welcome to my corner of the internet.
       I write about security, CTFs, and things I find interesting.
 
   socialIcons:
     - name: github
-      url: "https://github.com/yourusername"    # ← change this
-    - name: twitter
-      url: "https://twitter.com/yourusername"   # ← change or remove
+      url: "https://github.com/sard0x72"    # ← change this
+#    - name: twitter
+#      url: "https://twitter.com/yourusername"   # ← change or remove
 
 menu:
   main:
