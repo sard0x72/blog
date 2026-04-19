@@ -1,4 +1,4 @@
-baseURL: "https://yourdomain.com"   # ← change this to your domain
+baseURL: "https://sard0x72.github.io/blog/"   # ← change this to your domain
 languageCode: en-us
 title: "Your Name"                  # ← change this
 theme: PaperMod
