@@ -79,3 +79,5 @@ outputs:
     - HTML
     - RSS
     - JSON   # needed for search
+ignoreFiles:
+  - content/templates/.*
