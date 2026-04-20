@@ -20,7 +20,7 @@ web-server.2025-07-01.pcap
 
 ***
 ## Solution
-#### What tool did the attacker use to fuzz the web server ? (Format- include version e.g, [nmap@7.80](mailto:nmap@7.80))
+### What tool did the attacker use to fuzz the web server ? (Format- include version e.g, [nmap@7.80](mailto:nmap@7.80))
 
 Query that i used
 ```Queries
@@ -38,7 +38,7 @@ GOOGLE SAYS: [ffuf](https://www.google.com/search?client=firefox-b-e&channel=ent
 ffuf@2.1.0
 ```
 
-#### Which subdomain did the attacker discover?
+### Which subdomain did the attacker discover?
 
 Queries 
 ```Queries
@@ -62,7 +62,7 @@ cloud
 ```
 
 
-#### How many login attempts did the attacker make before successfully logging in to the dashboard?
+### How many login attempts did the attacker make before successfully logging in to the dashboard?
 
 Queries 
 ```queries
@@ -75,7 +75,7 @@ Queries
 3
 ```
 
-#### When did the attacker download the OpenStack API remote access config file? (UTC)
+### When did the attacker download the OpenStack API remote access config file? (UTC)
 
 ![](/blog/images/Pasted-image-20260420204930.png)
 
@@ -85,7 +85,7 @@ Queries
 2025-07-01 09:40:29
 ```
 
-#### When did the attacker first interact with the API on controller node? (UTC)
+### When did the attacker first interact with the API on controller node? (UTC)
 We are continuing the investigation on second pcap file. Beause it's controller traffic and we need one of it's nodes.
 
 Before that let's look at the API config file that attacker downloaded.  We'll see the controlled node's IP address. 
@@ -102,7 +102,7 @@ ip.src==117.200.21.26 && ip.dst==134.209.71.220
 2025-07-01 09:41:44
 ```
 
-#### What is the project id of the default project accessed by the attacker?
+### What is the project id of the default project accessed by the attacker?
 ```Queries
 ip.src==117.200.21.26 && ip.dst==134.209.71.220
 ```
@@ -113,14 +113,14 @@ ip.src==117.200.21.26 && ip.dst==134.209.71.220
 9fb84977ff7c4a0baf0d5dbb57e235c7
 ```
 
-#### Which OpenStack service provides authentication and authorization for the OpenStack API?
+### Which OpenStack service provides authentication and authorization for the OpenStack API?
 
 ![](/blog/images/Pasted-image-20260420205048.png)
 
 ```Answer
 keystone
 ```
-#### What is the endpoint URL of the swift service?
+### What is the endpoint URL of the swift service?
 * **Swift is basically OpenStack's version of Google Drive** — it stores files/objects in the cloud.
 
 ```
@@ -133,7 +133,7 @@ keystone
 http://134.209.71.220:8080/v1/AUTH_9fb84977ff7c4a0baf0d5dbb57e235c7
 ```
 
-#### How many containers were discovered by the attacker?
+### How many containers were discovered by the attacker?
 Containers in Swift = Folders
 "After the attacker logged into Swift, how many **folders** did they find/list?"
 
@@ -143,7 +143,7 @@ Containers in Swift = Folders
 3
 ```
 
-#### When did the attacker download the sensitive user data file? (UTC)
+### When did the attacker download the sensitive user data file? (UTC)
 
 ```Queries
  (frame.time_utc >= "2025-07-01T09:43:27.279520000Z") && (ip.src == 117.200.21.26)
@@ -158,7 +158,7 @@ Containers in Swift = Folders
 2025-07-01 09:45:23
 ```
 
-#### How many user records are in the sensitive user data file?
+### How many user records are in the sensitive user data file?
 
 ![](/blog/images/Pasted-image-20260420205152.png)
 
@@ -166,7 +166,7 @@ Containers in Swift = Folders
 28
 ```
 
-#### For persistence, the attacker created a new user with admin privileges. What is the username of the new user?
+### For persistence, the attacker created a new user with admin privileges. What is the username of the new user?
 
 ```Queries
  (frame.time_utc >= "2025-07-01T09:43:27.279520000Z") && (ip.src == 117.200.21.26)
@@ -180,7 +180,7 @@ We just need to scroll.
 jellibean
 ```
 
-#### What is the password of the new user?
+### What is the password of the new user?
 
 ```Queries
 ((frame.time_utc >= "2025-07-01T09:43:27.279520000Z") && (ip.addr == 117.200.21.26)) && (frame contains "jellibean")
@@ -192,7 +192,7 @@ jellibean
 P@$$word
 ```
 
-#### What is MITRE tactic id of the technique in task 12?
+### What is MITRE tactic id of the technique in task 12?
 just googled
 
 ```Answer
@@ -201,7 +201,7 @@ T1136.003
 
 We nailed it, man
 ***
-#### IOC
+### IOC
 Attacker IP: 117.200.21.26
 Web Server's IP: 157.230.81.229
 API Controlled node's IP: 134.209.71.220
