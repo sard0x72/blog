@@ -1,6 +1,6 @@
-baseURL: "https://again.uz/"   # ← change this to your domain
+baseURL: "http://sard0x72.github.io/blog/"
 languageCode: en-us
-title: "Sardor"                  # ← change this
+title: "sard0x72"
 theme: PaperMod
 pagination:
   pagerSize: 10
@@ -16,9 +16,9 @@ minify:
 
 params:
   env: production
-  title: "sardor"                # ← change this
+  title: "sard0x72"
   description: "Writeups and blog posts"
-  author: "sardor"               # ← change this
+  author: "sard0x72"
 
   defaultTheme: auto                # auto = follows system, or: light / dark
   disableThemeToggle: false
@@ -44,7 +44,7 @@ params:
     favicon: "/favicon.ico"
 
   homeInfoParams:
-    Title: "Hi, I'm Sardor Nuriddinov 👋"   # ← change this
+    Title: "Hello, i'm Sardor aka sard0x72"
     Content: >
       Welcome to my corner of the internet.
       I write about security, CTFs, and things I find interesting.
