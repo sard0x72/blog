@@ -51,9 +51,9 @@ Epoch Arrival Time: 1751362738.121751000
 
 ```
 
-![](/images/Pasted-image-20260420105321.png)
+![](/blog/images/Pasted-image-20260420105321.png)
 
-![](/images/Pasted image 20260420105321.png)
+![](/blog/images/Pasted image 20260420105321.png)
 
 ```Answer
 cloud
@@ -66,7 +66,7 @@ cloud
 (((frame contains "login") && (ip.src == 117.200.21.26) ) ) && (http.request.method == "POST")
 ```
 
-![](/images/Pasted image 20260329103310.png)
+![](/blog/images/Pasted image 20260329103310.png)
 
 ```Answer
 3
@@ -74,8 +74,8 @@ cloud
 
 ##### When did the attacker download the OpenStack API remote access config file? (UTC)
 
-![](/images/Pasted image 20260329144304.png)
-![](/images/Pasted image 20260329144350.png)
+![](/blog/images/Pasted image 20260329144304.png)
+![](/blog/images/Pasted image 20260329144350.png)
 
 ```Answer
 2025-07-01 09:40:29
@@ -85,13 +85,13 @@ cloud
 We are continuing the investigation on second pcap file. Beause it's controller traffic and we need one of it's nodes.
 
 Before that let's look at the API config file that attacker downloaded.  We'll see the controlled node's IP address. 
-![](/images/Pasted image 20260329155657.png)
+![](/blog/images/Pasted image 20260329155657.png)
 
 ```Queries
 ip.src==117.200.21.26 && ip.dst==134.209.71.220
 ```
 
-![](/images/Pasted image 20260329155955.png)
+![](/blog/images/Pasted image 20260329155955.png)
 
 ```Answer
 2025-07-01 09:41:44
@@ -102,7 +102,7 @@ ip.src==117.200.21.26 && ip.dst==134.209.71.220
 ip.src==117.200.21.26 && ip.dst==134.209.71.220
 ```
 
-![](/images/Pasted image 20260329161142.png)
+![](/blog/images/Pasted image 20260329161142.png)
 
 ```Answer
 9fb84977ff7c4a0baf0d5dbb57e235c7
@@ -110,7 +110,7 @@ ip.src==117.200.21.26 && ip.dst==134.209.71.220
 
 ##### Which OpenStack service provides authentication and authorization for the OpenStack API?
 
-![](/images/Pasted image 20260329171608.png)
+![](/blog/images/Pasted image 20260329171608.png)
 
 ```Answer
 keystone
@@ -122,7 +122,7 @@ keystone
 (frame.time_utc >= "2025-07-01T09:43:27.279520000Z") && (ip.src == 117.200.21.26)
 ```
 
-![](/images/Pasted image 20260329172334.png)
+![](/blog/images/Pasted image 20260329172334.png)
 
 ```Answer
 http://134.209.71.220:8080/v1/AUTH_9fb84977ff7c4a0baf0d5dbb57e235c7
@@ -132,7 +132,7 @@ http://134.209.71.220:8080/v1/AUTH_9fb84977ff7c4a0baf0d5dbb57e235c7
 Containers in Swift = Folders
 "After the attacker logged into Swift, how many **folders** did they find/list?"
 
-![](/images/Pasted image 20260329174615.png)
+![](/blog/images/Pasted image 20260329174615.png)
 
 ```Answer
 3
@@ -144,9 +144,9 @@ Containers in Swift = Folders
  (frame.time_utc >= "2025-07-01T09:43:27.279520000Z") && (ip.src == 117.200.21.26)
 ```
 
-![](/images/Pasted image 20260329175741.png)
+![](/blog/images/Pasted image 20260329175741.png)
 
-![](/images/Pasted image 20260329175949.png)
+![](/blog/images/Pasted image 20260329175949.png)
 
 ```Answer 
 2025-07-01 09:45:23
@@ -154,7 +154,7 @@ Containers in Swift = Folders
 
 ##### How many user records are in the sensitive user data file?
 
-![](/images/Pasted image 20260329180508.png)
+![](/blog/images/Pasted image 20260329180508.png)
 
 ```Answer
 28
@@ -168,7 +168,7 @@ Containers in Swift = Folders
 
 We just need to scroll.
 
-![](/images/Pasted image 20260329180708.png)
+![](/blog/images/Pasted image 20260329180708.png)
 
 ```Answer
 jellibean
@@ -180,7 +180,7 @@ jellibean
 ((frame.time_utc >= "2025-07-01T09:43:27.279520000Z") && (ip.addr == 117.200.21.26)) && (frame contains "jellibean")
 ```
 
-![](/images/Pasted image 20260329181628.png)
+![](/blog/images/Pasted image 20260329181628.png)
 
 ```Answer
 P@$$word
